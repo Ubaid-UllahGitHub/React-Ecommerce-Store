@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { Box, Button, Typography, IconButton } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
+import { useTheme } from "@mui/material/styles"; // Import the useTheme hook
 import "./style.css";
 
 
@@ -50,8 +50,10 @@ const NextArrow = ({ onClick }) => (
 );
 
 const Main = () => {
+  const theme = useTheme();  // Using the hook
+
   const mainContent = [
-    { image: "image/Banner-1.png", heading: "Samsung Galaxy S22 & Smart Watch Discount", text: "Upgrade your tech game with the latest Samsung Galaxy S22 and a cutting-edge digital smart watch. Limited-time discount – grab yours now!" },
+    { image: "image/Banner-1.png", heading: "Samsung Galaxy S22 & Smart Watch", text: "Upgrade your tech game with the latest Samsung Galaxy S22 and a cutting-edge digital smart watch. Limited-time discount – grab yours now!" },
     { image: "image/banner-2.png", heading: "Enhance Your Setup with Top Qaulity", text: "From mechanical keyboards to high-performance gaming mice, find the best accessories to boost your productivity and gaming experience." },
     { image: "image/Banner-3.png", heading: "Lifestyle with the Latest Smartwatch", text: "Stay connected and track your health with the newest smartwatch. Featuring a sleek design, fitness tracking, and seamless notifications – all at an exclusive discount!" }
   ];
@@ -111,6 +113,7 @@ const Main = () => {
               <Typography variant="h3" sx={{
                 mb: 2,
                 textAlign: "left",
+                fontFamily: theme.fonts.secondary,
                 fontWeight: "bold", // Make text bold
                 color: "#fff", // Ensure text is visible
                 textShadow: "1px 1px 1px rgba(0, 0, 0, 0.7)", // Add shadow for contrast
@@ -118,8 +121,9 @@ const Main = () => {
                 {item.heading}
               </Typography>
               <Typography variant="body1" sx={{
-                mb: 2, 
+                mb: 2,
                 textAlign: "left",
+                fontFamily: theme.fonts.secondary,
                 textShadow: "0px 0.4px 1px rgba(0, 0, 0, 0.7)", // Add shadow for contrast
               }}>
                 {item.text}
@@ -127,10 +131,26 @@ const Main = () => {
 
               {/* Buttons */}
               <Box sx={{ display: "flex", gap: "20px" }}>
-                <Button variant="contained" color="primary">
+                <Button variant="contained" color="primary" sx={{
+                  padding: "8px 25px",
+                  fontFamily: "'League Spartan', sans-serif",
+                  fontSize: "15px",
+                  textTransform: 'none',
+                  borderRadius: '8px',
+                  fontWeight: 500,
+                  boxShadow: "none"
+                }}>
                   Button 1
                 </Button>
-                <Button variant="contained" color="secondary">
+                <Button variant="contained" color="secondary" sx={{
+                  padding: "8px 25px",
+                  fontFamily: "'League Spartan', sans-serif",
+                  fontSize: "15px",
+                  textTransform: 'none',
+                  borderRadius: '8px',
+                  fontWeight: 500,
+                  boxShadow: "none"
+                }}>
                   Button 2
                 </Button>
               </Box>
