@@ -11,17 +11,25 @@ import "./style.css";
 const PrevArrow = ({ onClick }) => (
   <IconButton
     onClick={onClick}
+    
     sx={{
       position: "absolute",
       top: "49%",
-      left: "0",
+      left: "20px",
       height: "100%",
       borderRadius: "0px",
       transform: "translateY(-50%)",
-      backgroundColor: "rgba(0, 0, 0, 0.5)",
-      color: "white",
+      // backgroundColor: "rgba(0, 0, 0, 0.5)",
+      color: "secondary.main",
       zIndex: 10,
-      "&:hover": { backgroundColor: "rgba(0, 0, 0, 0.8)" }
+      // "&:hover": { backgroundColor: "rgba(0, 0, 0, 0.8)" }
+      outline: "none", // prevent focus outline
+    "&:focus": {
+      outline: "none",
+    },
+    "&:active": {
+      boxShadow: "none",
+    },
     }}
   >
     <ArrowBackIos />
@@ -35,14 +43,21 @@ const NextArrow = ({ onClick }) => (
     sx={{
       position: "absolute",
       top: "49%",
-      right: "0",
+      right: "20px",
       height: "100%",
       borderRadius: "0px",
       transform: "translateY(-50%)",
-      backgroundColor: "rgba(0, 0, 0, 0.5)",
-      color: "white",
+      // backgroundColor: "rgba(0, 0, 0, 0.5)",
+      color: "secondary.main",
       zIndex: 10,
-      "&:hover": { backgroundColor: "rgba(0, 0, 0, 0.8)" }
+      // "&:hover": { backgroundColor: "rgba(0, 0, 0, 0.8)" }
+      outline: "none", // prevent focus outline
+    "&:focus": {
+      outline: "none",
+    },
+    "&:active": {
+      boxShadow: "none",
+    },
     }}
   >
     <ArrowForwardIos />
@@ -53,9 +68,9 @@ const Main = () => {
   const theme = useTheme();  // Using the hook
 
   const mainContent = [
-    { image: "image/Banner-1.png", heading: "Samsung Galaxy S22 & Smart Watch", text: "Upgrade your tech game with the latest Samsung Galaxy S22 and a cutting-edge digital smart watch. Limited-time discount – grab yours now!" },
-    { image: "image/banner-2.png", heading: "Enhance Your Setup with Top Qaulity", text: "From mechanical keyboards to high-performance gaming mice, find the best accessories to boost your productivity and gaming experience." },
-    { image: "image/Banner-3.png", heading: "Lifestyle with the Latest Smartwatch", text: "Stay connected and track your health with the newest smartwatch. Featuring a sleek design, fitness tracking, and seamless notifications – all at an exclusive discount!" }
+    { image: "image/slider-banner-4d.webp", heading: "Samsung Galaxy S22 & Smart Watch", text: "Upgrade your tech game with the latest Samsung Galaxy S22 and a cutting-edge digital smart watch. Limited-time discount – grab yours now!" },
+    { image: "image/slider-banner-4c.webp", heading: "Enhance Your Setup with Top Qaulity", text: "From mechanical keyboards to high-performance gaming mice, find the best accessories to boost your productivity and gaming experience." },
+    { image: "image/slider-banner-4b.webp", heading: "Lifestyle with the Latest Smartwatch", text: "Stay connected and track your health with the newest smartwatch. Featuring a sleek design, fitness tracking, and seamless notifications – all at an exclusive discount!" }
   ];
 
   const settings = {
@@ -87,7 +102,7 @@ const Main = () => {
             sx={{
               position: "relative",
               width: "100%",
-              height: "100vh", // Ensures full height
+              height: "450px", // Ensures full height
               backgroundImage: `url(${item.image})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
@@ -99,7 +114,7 @@ const Main = () => {
               sx={{
                 position: "absolute",
                 top: 0,
-                left: "115px",
+                left: "80px",
                 width: "43%",
                 height: "100%",
                 display: "flex",
@@ -115,16 +130,20 @@ const Main = () => {
                 textAlign: "left",
                 fontFamily: theme.fonts.secondary,
                 fontWeight: "bold", // Make text bold
-                color: "#fff", // Ensure text is visible
-                textShadow: "1px 1px 1px rgba(0, 0, 0, 0.7)", // Add shadow for contrast
+                color: "secondary.main", // Ensure text is visible
+                fontSize: "40px"
+                // textShadow: "1px 1px 1px rgba(0, 0, 0, 0.7)", // Add shadow for contrast
               }}>
                 {item.heading}
               </Typography>
               <Typography variant="body1" sx={{
                 mb: 2,
                 textAlign: "left",
-                fontFamily: theme.fonts.secondary,
-                textShadow: "0px 0.4px 1px rgba(0, 0, 0, 0.7)", // Add shadow for contrast
+                fontFamily: theme.fonts.primary,
+                color: "secondary.main", // Ensure text is visible
+                fontSize: "16px",
+                fontWeight: "400"
+                // textShadow: "0px 0.4px 1px rgba(0, 0, 0, 0.7)", // Add shadow for contrast
               }}>
                 {item.text}
               </Typography>

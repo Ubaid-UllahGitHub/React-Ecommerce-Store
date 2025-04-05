@@ -18,13 +18,13 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: gray;
+    background: #213547;
     border: none;
     cursor: pointer;
   }
   
   .slick-dots li.slick-active button {
-    background: #6e07f3;
+    background: #37acb0;
   }
   
   
