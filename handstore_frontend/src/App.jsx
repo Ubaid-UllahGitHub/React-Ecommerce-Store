@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  // Import necessary routing components
 import ThemeProvider from './contexts/ThemeContext';  // Assuming this is your Theme Context
 import Home from './pages/Home';

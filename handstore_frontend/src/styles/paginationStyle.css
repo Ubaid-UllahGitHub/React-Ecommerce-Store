@@ -1,0 +1,27 @@
+/* === Swiper Navigation Buttons === */
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: #fff !important;
+  border-radius: 50% !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
+  color: #213547 !important; /* Secondary */
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  transition: all 0.3s ease !important;
+  z-index: 10 !important;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #37acb0 !important; /* Primary on hover */
+}
+
+/* Icon size */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 16px !important;
+}
+
